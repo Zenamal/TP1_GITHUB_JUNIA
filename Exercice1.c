@@ -9,6 +9,5 @@ seconde = seconde - (3600*heures);
 int minutes = seconde/60;
 seconde = seconde - (60*minutes);
 printf("%d secondes = %d heures, %d minutes, %d secondes",original,heures,minutes,seconde);
-return 0;
 }
 
