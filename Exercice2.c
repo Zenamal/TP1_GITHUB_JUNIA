@@ -2,15 +2,17 @@
 #include <stdio.h>
 #include <math.h>
 int main(){
-int C = 0;
-int T = 0;
-int N = 0;
+float C = 0;
+float T = 0;
+float N = 0;
 printf("Quel est le montant du pret?");
-scanf("%d",&C);
-printf("Quel est le taux d'interet annuel");
-scanf("%d",&T);
+scanf("%f",&C);
+printf("Quel est le taux d'interet annuel?");
+scanf("%f",&T);
 printf("Quel est la duree un pret en annees?");
-scanf("%d",&N);
-float mensualite = (C*(T/12))/(1-pow((1+(T/12)),(-N/12)));
-printf("Les mensualites sont donc de %d",mensualite);
+scanf("%f",&N);
+float mensualite = 0;
+mensualite = (C*(T/12))/(1-(pow((1+(T/12)),(-N*12))));
+printf("Les mensualites sont donc de %f",mensualite);
+return 0;
 }
