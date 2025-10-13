@@ -1,21 +1,15 @@
-#include <stdio.h>
-//Exercice 1
-int main(){
-int original = 0;
-scanf("%d",&original);
-int seconde = original;
-int heures = seconde/3600;
-seconde = seconde - (3600*heures);
-int minutes = seconde/60;
-seconde = seconde - (60*minutes);
-printf("%d secondes = %d heures, %d minutes, %d secondes",original,heures,minutes,seconde);
-return 0;
-}
-
 //Exercice 2
+#include <stdio.h>
 int main(){
 int C = 0;
 int T = 0;
-int
-
+int N = 0;
+printf("Quel est le montant du pret?");
+scanf("%d",&C);
+printf("Quel est le taux d'interet annuel");
+scanf("%d",&C);
+printf("Quel est la duree un pret en annees?");
+scanf("%d",&C);
+float mensualite = (C*(T/12))/(1-(1+(T/12))^(-N/12));
+printf("Les mensualites sont donc de %d",mensualite);
 }
