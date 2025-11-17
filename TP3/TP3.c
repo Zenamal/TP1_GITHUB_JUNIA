@@ -12,7 +12,15 @@ int main(){
     {
         for(int j = 0; j < 20;j++)
         {
-            img[i][j]='\0';
+            img[i][j]='a';
         }
+    }
+    for(int i=0;i<20;i++)
+    {
+        for(int j = 0; j < 20;j++)
+        {
+            printf("%c",img[i][j]);
+        }
+        printf("\n");
     }
 }
