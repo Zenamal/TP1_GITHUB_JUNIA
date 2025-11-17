@@ -41,7 +41,8 @@ int main(){
         }
     }
     int x = 0;
-    for(int i=n;i<max_height;i++)
+    int i = n;
+    while(i<max_height)
     {img[i][x]='\"';
     img[i][width-x]='\"';
     img[i][x+1]='S';
@@ -58,7 +59,11 @@ int main(){
             y++;
         }
     x++;
+    i++;
     }
+    int gauche = x-1;
+    int droite = mid;
+    img[i][x]='.';
     for(int i=0;i<width;i++)
     {
         for(int j = 0; j < width;j++)
