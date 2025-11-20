@@ -63,7 +63,46 @@ int main(){
     }
     int gauche = x-1;
     int droite = mid;
-    img[i][x]='.';
+    int temp = i;
+    while (droite >= gauche)
+    {
+        img[i][gauche] = '.';
+        img[i][droite] = '\"';
+        int k = gauche + 1;
+        while (k < droite)
+        {
+            img[i][k]='S';
+            k++;
+        }
+        if(n<9)
+            {gauche = gauche - 1;
+            droite = droite - 2;}
+        if(n>8)
+            {gauche = gauche - 1;
+            droite = droite - 3;}
+            i++;
+    }
+    i = temp;
+    droite = width-x+1;
+    gauche = mid;
+    while (droite >= gauche)
+    {
+        img[i][droite] = '.';
+        img[i][gauche] = '\"';
+        int k = droite - 1;
+        while (k > gauche)
+        {
+            img[i][k]='S';
+            k=k-1;
+        }
+        if(n<9)
+        {gauche = gauche + 2;
+        droite = droite + 1;}
+        if(n>8)
+        {gauche = gauche + 3;
+        droite = droite + 1;}
+        i++;
+    }
     for(int i=0;i<width;i++)
     {
         for(int j = 0; j < width;j++)
