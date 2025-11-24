@@ -58,6 +58,17 @@ float calculerMoyenneEleve(int indiceEleve,float tab[30][4])
     float moyenne = (tab[indiceEleve - 1][1] +tab[indiceEleve - 1][2] +tab[indiceEleve - 1][3])/3;
     return moyenne;
 }
+
+float calculerMoyenneGenerale(int eleves,float tab[30][4])
+{
+    float moyenneG=0;
+    for (int i = 0;i<eleves;i++)
+    {
+        moyenneG = moyenneG + calculerMoyenneEleve(i+1,tab);
+    }
+    moyenneG = moyenneG/eleves;
+    return moyenneG;
+}
 int main(){
 afficherMenu();
 lireChoix();
@@ -65,5 +76,6 @@ int eleve = saisirNombreEleves();
 float tab[eleve][4];
 saisirNotes(eleve,tab);
 afficherNotes(eleve,tab);
-printf("%f",calculerMoyenneEleve(1,tab));
+printf("%.2f\n",calculerMoyenneEleve(1,tab));
+printf("%f.2\n",calculerMoyenneGenerale(eleve,tab));
 }
