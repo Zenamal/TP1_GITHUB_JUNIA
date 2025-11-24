@@ -69,6 +69,26 @@ float calculerMoyenneGenerale(int eleves,float tab[30][4])
     moyenneG = moyenneG/eleves;
     return moyenneG;
 }
+
+float trouverMeilleureNoteControle(int indice,int eleves,float tab[30][4]){
+    float max = tab[0][indice];
+    for (int j=0; j<eleves;j++)
+        {
+            if (tab[j][indice]>max)
+            {
+                max = tab[j][indice];
+            }
+        }
+    return max;
+}
+
+float afficherMeilleuresNotes(int eleves,float tab[30][4])
+{
+    for (int i=1;i<=3;i++)
+    {
+        printf("Meilleure note au controle %d : %.2f\n",i,trouverMeilleureNoteControle(i,eleves,tab));
+    }
+}
 int main(){
 afficherMenu();
 lireChoix();
@@ -76,6 +96,6 @@ int eleve = saisirNombreEleves();
 float tab[eleve][4];
 saisirNotes(eleve,tab);
 afficherNotes(eleve,tab);
-printf("%.2f\n",calculerMoyenneEleve(1,tab));
-printf("%f.2\n",calculerMoyenneGenerale(eleve,tab));
+printf("%.2f\n",calculerMoyenneGenerale(eleve,tab));
+afficherMeilleuresNotes(eleve,tab);
 }
