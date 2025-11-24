@@ -25,27 +25,45 @@ int saisirNombreEleves()
     return eleve;
     
 }
-int saisirNotes(int nbreEleve,float tab[30][3]){
+int saisirNotes(int nbreEleve,float tab[30][4]){
     printf("Saisir des notes pour %d eleves et 3 controles\n",nbreEleve);
     for(int i = 1; i <= nbreEleve;i++)
-    {printf("Eleve %d : ",i);
+    {printf("Eleve %d : \n",i);
         for(int j = 1; j <= 3; j++)
         {
             float note = 0;
             printf("\nNote du controle %d (0 a 20) : ",j);
-            scanf("%f",&note);
-            if(note > 20){
+            scanf("%f",&tab[i-1][j]);
+            if(tab[i-1][j] > 20){
                 printf("Valeur invalide \n");
                 j = j - 1;
-            tab[i-1][j] = note;
             }
         }
+        tab[i-1][0]=i;
     }
+}
+int afficherNotes(int eleves,float tab[30][4]){
+    printf("Tableau des notes\n");
+    printf("Eleve\t C1\t C2\t C3\n");
+    for (int i=0;i<eleves;i++){
+        for (int j=0;j<4;j++)
+        {
+            printf("%.2f\t",tab[i][j]);
+        }
+        printf("\n");
+    }
+}
+float calculerMoyenneEleve(int indiceEleve,float tab[30][4])
+{
+    float moyenne = (tab[indiceEleve - 1][1] +tab[indiceEleve - 1][2] +tab[indiceEleve - 1][3])/3;
+    return moyenne;
 }
 int main(){
 afficherMenu();
 lireChoix();
 int eleve = saisirNombreEleves();
-float tab[eleve][3];
+float tab[eleve][4];
 saisirNotes(eleve,tab);
+afficherNotes(eleve,tab);
+printf("%f",calculerMoyenneEleve(1,tab));
 }
