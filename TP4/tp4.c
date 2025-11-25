@@ -29,9 +29,8 @@ int saisirNotes(int nbreEleve,float tab[30][4]){
     printf("Saisir des notes pour %d eleves et 3 controles\n",nbreEleve);
     for(int i = 1; i <= nbreEleve;i++)
     {printf("Eleve %d : \n",i);
-        for(int j = 1; j < 4; j++)
+        for(int j = 1; j <= 3; j++)
         {
-            float note = 0;
             printf("\nNote du controle %d (0 a 20) : ",j);
             scanf("%f",&tab[i-1][j]);
             if(tab[i-1][j] > 20){
@@ -39,10 +38,7 @@ int saisirNotes(int nbreEleve,float tab[30][4]){
                 j = j - 1;
             }
         }
-    }
-    for(int i = 1; i <= 3;i++){
         tab[i-1][0]=i;
-        printf("%f",tab[i-1][0]);
     }
 }
 int afficherNotes(int eleves,float tab[30][4]){
@@ -98,9 +94,9 @@ int eleve = 0;
 while (x!=0)
 {afficherMenu();
 x = lireChoix();
+float tab[100][4];
 if (x == 1){
 eleve = saisirNombreEleves();}
-float tab[eleve][4];
 if (x==2){
 saisirNotes(eleve,tab);}
 if (x==3){
@@ -111,13 +107,13 @@ if (x==4){
         printf("De quel eleve souhaitez vous voir la moyenne? (Donnez son Id)");
         scanf("%d",&id);
         if (id == 0 || id > eleve){
-            printf("Cet Id ne correspond à aucun éleve");           
+            printf("Cet Id ne correspond à aucun eleve");           
         }
     }
     printf("La moyenne de cet eleve est de %f\n",calculerMoyenneEleve(id,tab));
 }
 if (x==5){
-    printf("%.2f\n",calculerMoyenneGenerale(eleve,tab));
+    printf("La moyenne generale est de : %.2f\n",calculerMoyenneGenerale(eleve,tab));
 }
 if (x==6){
     afficherMeilleuresNotes(eleve,tab);}
