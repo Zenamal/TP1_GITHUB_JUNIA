@@ -4,7 +4,7 @@
 
 void afficherMenu()
 {
-    printf("=====Gestion de Notes======\n1. Saisir le nombre d'eleves\n2.Saisir les notes des eleves\n3.Afficher toutes les notes\n4.Afficher la moyenne d'un eleve\n5.Afficher la moyenne generale\n5.Afficher la meilleure note de chaque controle\n0.Quitter\n");
+    printf("=====Gestion de Notes======\n1. Saisir le nombre d'eleves\n2.Saisir les notes des eleves\n3.Afficher toutes les notes\n4.Afficher la moyenne d'un eleve\n5.Afficher la moyenne generale\n6.Afficher la meilleure note de chaque controle\n0.Quitter\n");
 }
 int lireChoix()
 {
@@ -29,7 +29,7 @@ int saisirNotes(int nbreEleve,float tab[30][4]){
     printf("Saisir des notes pour %d eleves et 3 controles\n",nbreEleve);
     for(int i = 1; i <= nbreEleve;i++)
     {printf("Eleve %d : \n",i);
-        for(int j = 1; j <= 3; j++)
+        for(int j = 1; j < 4; j++)
         {
             float note = 0;
             printf("\nNote du controle %d (0 a 20) : ",j);
@@ -39,7 +39,10 @@ int saisirNotes(int nbreEleve,float tab[30][4]){
                 j = j - 1;
             }
         }
+    }
+    for(int i = 1; i <= 3;i++){
         tab[i-1][0]=i;
+        printf("%f",tab[i-1][0]);
     }
 }
 int afficherNotes(int eleves,float tab[30][4]){
@@ -90,12 +93,36 @@ float afficherMeilleuresNotes(int eleves,float tab[30][4])
     }
 }
 int main(){
-afficherMenu();
-lireChoix();
-int eleve = saisirNombreEleves();
+int x = -1;
+int eleve = 0;
+while (x!=0)
+{afficherMenu();
+x = lireChoix();
+if (x == 1){
+eleve = saisirNombreEleves();}
 float tab[eleve][4];
-saisirNotes(eleve,tab);
-afficherNotes(eleve,tab);
-printf("%.2f\n",calculerMoyenneGenerale(eleve,tab));
-afficherMeilleuresNotes(eleve,tab);
+if (x==2){
+saisirNotes(eleve,tab);}
+if (x==3){
+afficherNotes(eleve,tab);}
+if (x==4){
+    int id = 0;
+    while (id == 0 || id > eleve){
+        printf("De quel eleve souhaitez vous voir la moyenne? (Donnez son Id)");
+        scanf("%d",&id);
+        if (id == 0 || id > eleve){
+            printf("Cet Id ne correspond à aucun éleve");           
+        }
+    }
+    printf("La moyenne de cet eleve est de %f\n",calculerMoyenneEleve(id,tab));
+}
+if (x==5){
+    printf("%.2f\n",calculerMoyenneGenerale(eleve,tab));
+}
+if (x==6){
+    afficherMeilleuresNotes(eleve,tab);}
+}
+if (x==0){
+    printf("D'accord A bientot");
+}
 }
