@@ -27,6 +27,27 @@ int montant_valide(int montant){
     
 }
 
+void calcul_distribution(int montant){
+    printf("%d\n",montant);
+    int gros_b = 0;
+    int moyen_b = 0;
+    int petit_b = 0;
+    while((montant - 50)>0){
+        gros_b++;
+        montant = montant - 50;
+        printf("%d\n",gros_b);
+    }
+    while((montant - 20)>0){
+        moyen_b++;
+        montant = montant - 20;
+    }
+    while((montant - 5)>0){
+        petit_b++;
+        montant = montant - 5;
+    }
+    printf("Billets distribues : \n%d Billets de 50 euros\n%d Billets de 20 euros\n%d Billets de 5 euros\n");
+}
+
 int main(){
     int choix = 0;
     printf("Votre choix : ");
