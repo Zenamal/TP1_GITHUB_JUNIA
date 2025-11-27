@@ -30,6 +30,7 @@ int montant_valide(int montant){
 void calcul_distribution(int montant){
     int gros_b = 0;
     int moyen_b = 0;
+    int moyen_pb = 0;
     int petit_b = 0;
     while((montant - 50)>=0){
         gros_b++;
@@ -39,11 +40,15 @@ void calcul_distribution(int montant){
         moyen_b++;
         montant = montant - 20;
     }
+    while((montant - 10)>=0){
+        moyen_pb++;
+        montant = montant - 10;
+    }
     while((montant - 5)>=0){
         petit_b++;
         montant = montant - 5;
     }
-    printf("Billets distribues : \n%d Billets de 50 euros\n%d Billets de 20 euros\n%d Billets de 5 euros\n",gros_b,moyen_b,petit_b);
+    printf("Billets distribues : \n%d Billets de 50 euros\n%d Billets de 20 euros\n%d Billets de 10 euros\n%d Billets de 5 euros\n",gros_b,moyen_b,moyen_pb,petit_b);
 }
 
 int main(){
