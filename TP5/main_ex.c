@@ -6,7 +6,9 @@
 int main(){
     int choix = 0;
     int tab[7];
-    initialiser(tab);
+    int resultat = charger(tab);
+    if (resultat==0){
+    initialiser(tab);}
     while (choix != 3){
     afficher_menu();
     choix = LireChoix();

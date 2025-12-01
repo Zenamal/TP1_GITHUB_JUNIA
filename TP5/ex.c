@@ -34,3 +34,18 @@ void ajouterConsommation(int tab[7]){
 void afficherResume(int tab[7]){
     printf("========== Resume du jour ==========\nEau : %d\nCafe : %d\nBonbons %d\nGateaux : %d\nLegumes : %d\nFruits : %d\nProteines : %d\n====================================",tab[0],tab[1],tab[2],tab[3],tab[4],tab[5],tab[6]);
 }
+
+int charger(int conso[7]){
+    FILE * file = fopen("consomation.txt","r");
+    if (file == NULL){
+        return 0;
+    }
+    for(int i = 0; i < 7;i++){
+        if (fscanf(file,"%d",&conso[i]) != 1){
+            fclose(file);
+            return 0;
+        }
+    }
+    fclose(file);
+    return 1;
+}
