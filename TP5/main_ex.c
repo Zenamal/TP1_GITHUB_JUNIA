@@ -3,8 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
+#include <locale.h>
 
 int main(){
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    setlocale(LC_ALL, ".UTF-8");
     int choix = 0;
     int tab[7];
     int resultat = charger(tab);
