@@ -38,27 +38,19 @@ void afficherResume(int tab[7]){
 int charger(int tab[7]){
     FILE * file = fopen("consomation.txt","r");
     if (file == NULL){
+        printf("Le chargement est impossible\n");
         return 0;
     }
-    for(int i = 0; i < 7;i++){
-        if (fscanf(file,"%d",&tab[i]) != 1){
-            fclose(file);
-            return 0;
-        }
-    }
+    fscanf(file,"%d %d %d %d %d %d %d",&tab[0],&tab[1],&tab[2],&tab[3],&tab[4],&tab[5],&tab[6]);
     fclose(file);
-    return 1;
 }
 
 int sauvegarder(int tab[7]){
-    FILE * file = fopen("consomation.txt","w");
-    for (int i = 0;i<7;i++){
-        fprintf(file,"%d",tab[i]);
-        if (fprintf(file,"%d",tab[i])=="EOF"){
-            fclose(file);
-            return 0;
-        }
+    FILE * file = fopen("consomation.txt","w+");
+    if (file == NULL){
+        printf("L'ouverture est impossible\n");
+        return 0;
     }
+    fscanf(file,"%d %d %d %d %d %d %d",tab[0],tab[1],tab[2],tab[3],tab[4],tab[5],tab[6]);
     fclose(file);
-    return 1;
 }

@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 void afficher_menu();
 int LireChoix();
 void initialiser(int tab[7]);

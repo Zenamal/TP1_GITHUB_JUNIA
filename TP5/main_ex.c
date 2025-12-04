@@ -8,7 +8,8 @@ int main(){
     int tab[7];
     int resultat = charger(tab);
     if (resultat==0){
-    initialiser(tab);}
+        printf("Aucune sauvegarde trouvee");
+        initialiser(tab);}
     while (choix != 3){
     afficher_menu();
     choix = LireChoix();
@@ -17,6 +18,12 @@ int main(){
     }
     else if (choix == 2){
         afficherResume(tab);
+    }
+    else if (choix == 3){
+        sauvegarder(tab);
+    }
+    else{
+        printf("Ce choix n'existe pas. Reessayez");
     }
     }
 }
