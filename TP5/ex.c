@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 
 void afficher_menu(){
     printf("=============================\n   Suivi de consommation\n=============================\n1. Ajouter une consommation\n2. Afficher le resume du jour\n3. Sauvegarder et quitter\n");
@@ -48,9 +49,9 @@ int charger(int tab[7]){
 int sauvegarder(int tab[7]){
     FILE * file = fopen("consomation.txt","w+");
     if (file == NULL){
-        printf("L'ouverture est impossible\n");
+        printf("La sauvegarde est impossible\n");
         return 0;
     }
-    fscanf(file,"%d %d %d %d %d %d %d",tab[0],tab[1],tab[2],tab[3],tab[4],tab[5],tab[6]);
+    fprintf(file,"%d %d %d %d %d %d %d",tab[0],tab[1],tab[2],tab[3],tab[4],tab[5],tab[6]);
     fclose(file);
 }

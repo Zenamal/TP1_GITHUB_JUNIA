@@ -2,13 +2,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 
 int main(){
     int choix = 0;
     int tab[7];
     int resultat = charger(tab);
     if (resultat==0){
-        printf("Aucune sauvegarde trouvee");
+        printf("Aucune sauvegarde trouvee\n");
         initialiser(tab);}
     while (choix != 3){
     afficher_menu();
