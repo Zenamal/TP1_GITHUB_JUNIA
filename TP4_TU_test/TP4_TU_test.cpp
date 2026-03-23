@@ -86,6 +86,11 @@ namespace TP4TUtest
 			Assert::AreEqual(factorielle(-3), NULL);
 		}
 
+		TEST_METHOD(TestMethod15)
+		{
+			Assert::AreEqual(contientMajuscule("bonjour"), 0);
+		}
+
 //Question 1: Non car les nombres négatifs n'ont pas de factorielle
 //Question 2: On change la fonction pour qu'elle renvoie NULL si n est negatif
 	};
