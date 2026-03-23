@@ -109,5 +109,10 @@ namespace TP4TUtest
 			Assert::AreEqual(contientMajuscule(""), 0);
 		}
 
+		TEST_METHOD(TestMethod19)
+		{
+			Assert::AreEqual(contientMajuscule(NULL), 0);
+		}
+
 	};
 }
