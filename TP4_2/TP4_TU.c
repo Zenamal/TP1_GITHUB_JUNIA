@@ -1,4 +1,7 @@
 #include "TP4_TU.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int estPair(int n) {
     return n % 2 == 0;
@@ -16,8 +19,11 @@ int max2(int a, int b) {
 
 int factorielle(int n) {
     int resultat = 1;
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
         resultat *= i;
+    }
+    if (n < 0) {
+        return NULL;
     }
     return resultat;
 }
