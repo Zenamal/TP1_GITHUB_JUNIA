@@ -36,6 +36,8 @@ namespace TP4TUtest
 		{
 			Assert::AreEqual(estPair(-3), 0);
 		}
+		//Question 1: Non, tous les tests ne passent pas
+		//Question 2: La fonction est mal construite et inverse les bonnes et les mauvaises reponses.
 
 		TEST_METHOD(TestMethod6)
 		{
@@ -47,7 +49,15 @@ namespace TP4TUtest
 			Assert::AreEqual(max2(3, 5), 5);
 		}
 
-//Question 1: Non, tous les tests ne passent pas
-//Question 2: La fonction est mal construite et inverse les bonnes et les mauvaises reponses.
+		TEST_METHOD(TestMethod8)
+		{
+			Assert::AreEqual(max2(-1, -8), -1);
+		}
+
+		TEST_METHOD(TestMethod9)
+		{
+			Assert::AreEqual(max2(4, 4),4);
+		}
+
 	};
 }
