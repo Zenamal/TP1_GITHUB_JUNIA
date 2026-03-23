@@ -59,5 +59,6 @@ namespace TP4TUtest
 			Assert::AreEqual(max2(4, 4),4);
 		}
 
+//Question 1: Le test 3 revele le bug le plus clairement car il est le seul test a ne pas être juste
 	};
 }
