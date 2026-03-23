@@ -17,7 +17,8 @@ namespace TP4TUtest
 		{
 			Assert::AreEqual(estPair(6), 1);
 		}
-		TEST_METHOD(TestMethod1)
+
+		TEST_METHOD(TestMethod2)
 		{
 			Assert::AreEqual(estPair(7), 0);
 		}
