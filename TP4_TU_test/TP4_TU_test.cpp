@@ -133,6 +133,7 @@ namespace TP4TUtest
 		{
 			Assert::AreEqual(divisionExacte(10, 0), 0);
 		}
+//Question: Car on ne peut pas diviser un nombre par 0.
 
 	};
 }
