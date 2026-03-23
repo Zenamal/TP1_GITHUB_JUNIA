@@ -134,6 +134,12 @@ namespace TP4TUtest
 			Assert::AreEqual(divisionExacte(10, 0), 0);
 		}
 //Question: Car on ne peut pas diviser un nombre par 0.
+		int tab1[3] = { 1,2,3};
+
+		TEST_METHOD(TestMethod24)
+		{
+			Assert::AreEqual(sommeTableau(tab1, 3), 6);
+		}
 
 	};
 }
