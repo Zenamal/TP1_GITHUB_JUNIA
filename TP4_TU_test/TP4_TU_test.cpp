@@ -1,0 +1,25 @@
+#include "pch.h"
+#include "CppUnitTest.h"
+
+extern "C" {
+#include "../TP4_2/TP4_TU.h" 
+}
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+namespace TP4TUtest
+{
+	TEST_CLASS(TP4TUtest)
+	{
+	public:
+		
+		TEST_METHOD(TestMethod1)
+		{
+			Assert::AreEqual(estPair(6), 1);
+		}
+		TEST_METHOD(TestMethod1)
+		{
+			Assert::AreEqual(estPair(7), 0);
+		}
+	};
+}
