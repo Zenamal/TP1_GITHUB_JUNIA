@@ -75,5 +75,10 @@ namespace TP4TUtest
 		{
 			Assert::AreEqual(factorielle(4), 24);
 		}
+
+		TEST_METHOD(TestMethod13)
+		{
+			Assert::AreEqual(factorielle(5), 120);
+		}
 	};
 }
