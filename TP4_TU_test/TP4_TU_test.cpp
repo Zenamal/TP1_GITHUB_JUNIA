@@ -36,5 +36,8 @@ namespace TP4TUtest
 		{
 			Assert::AreEqual(estPair(-3), 0);
 		}
+
+//Question 1: Non, tous les tests ne passent pas
+//Question 2: La fonction est mal construite et inverse les bonnes et les mauvaises reponses.
 	};
 }
