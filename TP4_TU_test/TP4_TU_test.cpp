@@ -60,5 +60,10 @@ namespace TP4TUtest
 		}
 
 //Question 1: Le test 3 revele le bug le plus clairement car il est le seul test a ne pas être juste
+
+		TEST_METHOD(TestMethod10)
+		{
+			Assert::AreEqual(factorielle(0), 1);
+		}
 	};
 }
