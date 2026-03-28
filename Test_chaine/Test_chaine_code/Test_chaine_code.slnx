@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../Test_chaine_flm/Test_chaine_flm.vcxproj" />
+  <Project Path="Test_chaine_code.vcxproj" />
+</Solution>
