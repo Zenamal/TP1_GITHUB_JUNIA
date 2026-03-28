@@ -138,6 +138,7 @@ namespace TP4TUtest
 		int tab1[3] = { 1,2,3 };
 		int tab2[3] = { 5 };
 		int tab3[3] = { -1, 4, -3 };
+		int tab4[0] = {};
 		TEST_METHOD(TestMethod24)
 		{
 			Assert::AreEqual(sommeTableau(tab1, 3), 6);
@@ -152,6 +153,12 @@ namespace TP4TUtest
 		{
 
 			Assert::AreEqual(sommeTableau(tab3, 3), 0);
+		}
+
+		TEST_METHOD(TestMethod27)
+		{
+
+			Assert::AreEqual(sommeTableau(tab4, 0), 0);
 		}
 	};
 }
