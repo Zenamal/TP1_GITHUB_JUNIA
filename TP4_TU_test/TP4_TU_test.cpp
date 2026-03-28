@@ -135,30 +135,35 @@ namespace TP4TUtest
 		}
 //Question: Car on ne peut pas diviser un nombre par 0.
 
-		int tab1[3] = { 1,2,3 };
-		int tab2[3] = { 5 };
-		int tab3[3] = { -1, 4, -3 };
-		int tab4[0] = {};
 		TEST_METHOD(TestMethod24)
 		{
+			int tab1[6] = { 1,2,3 };
 			Assert::AreEqual(sommeTableau(tab1, 3), 6);
 		}
 
 		TEST_METHOD(TestMethod25)
 		{
+			int tab2[6] = { 5 };
 			Assert::AreEqual(sommeTableau(tab2, 1), 5);
 		}
 		
 		TEST_METHOD(TestMethod26)
 		{
-
+			int tab3[6] = { -1, 4, -3 };
 			Assert::AreEqual(sommeTableau(tab3, 3), 0);
 		}
 
 		TEST_METHOD(TestMethod27)
 		{
-
+			int tab4[6] = {};
 			Assert::AreEqual(sommeTableau(tab4, 0), 0);
 		}
+
+		TEST_METHOD(TestMethod28)
+		{
+			int tab5[6];
+			Assert::AreEqual(sommeTableau(tab5, 3), 0);
+		}
+
 	};
 }
