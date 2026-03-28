@@ -162,8 +162,13 @@ namespace TP4TUtest
 		TEST_METHOD(TestMethod28)
 		{
 			int tab5[6];
-			Assert::AreEqual(sommeTableau(tab5, 3), 0);
+			Assert::AreEqual(sommeTableau(tab5, 0), 0);
 		}
 
+		TEST_METHOD(TestMethod29)
+		{
+			int tab5[6];
+			Assert::AreEqual(sommeTableau(tab5, 3), 0);
+		}
 	};
 }
